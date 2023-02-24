@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/frontIA/static/css/main.212980cc.css",
+    "main.js": "/frontIA/static/js/main.ac046a87.js",
+    "static/js/787.963b9769.chunk.js": "/frontIA/static/js/787.963b9769.chunk.js",
+    "static/media/logo.png": "/frontIA/static/media/logo.da67e126a06c394c49fe.png",
+    "index.html": "/frontIA/index.html",
+    "main.212980cc.css.map": "/frontIA/static/css/main.212980cc.css.map",
+    "main.ac046a87.js.map": "/frontIA/static/js/main.ac046a87.js.map",
+    "787.963b9769.chunk.js.map": "/frontIA/static/js/787.963b9769.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.212980cc.css",
+    "static/js/main.ac046a87.js"
+  ]
+}
