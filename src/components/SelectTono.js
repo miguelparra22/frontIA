@@ -5,16 +5,16 @@ const valoresItems = [
         value: "Informal"
     },
     {
-        value: "Serio"
+        value: "Serious"
     },
     {
-        value: "Amigable"
+        value: "Friendly"
     },
     {
-        value: "Humoristico"
+        value: "Humorous"
     },
     {
-        value: "Autoritario"
+        value: "authoritative"
     }
 ]
 

@@ -1,28 +1,28 @@
 import React from "react";
 const valoresItems = [
     {
-        value: "Tecnologia"
+        value: "Technology"
     },
     {
-        value: "Viaje"
+        value: "Journey"
     },
     {
-        value: "Moda y belleza"
+        value: "fashion and beauty"
     },
     {
-        value: "Salud y fitness"
+        value: "health and fitness"
     },
     {
-        value: "Cocina y alimentación"
+        value: "kitchen and food"
     },
     {
-        value: "Finanzas personales"
+        value: "personal finance"
     },
     {
-        value: "Entretenimiento"
+        value: "Entertainment"
     },
     {
-        value: "Negocios y emprendimiento"
+        value: "Business and entrepreneurship"
     },
 ]
 
@@ -39,14 +39,14 @@ function SelectItem() {
 
     return (
         <React.Fragment>
-            <label className="pInfo">Tema de interes</label>
+            <label className="pInfo">Topic of interest</label>
             <select id="selectItem" onChange={valorSelectItem} className='selectForm' >
-            <option value="" disabled>seleccione la marca</option>
+            <option value="" disabled>Select an option</option>
                 {valoresItems.map(valorItem => (
                     <option value={valorItem.value}>{valorItem.value}</option>
                 ))}
             </select>
-            <p className="pInfoGreen"><b>Seleccionaste:</b> <span id="spanItem"></span></p>
+            <p className="pInfoGreen"><b>you selected:</b> <span id="spanItem"></span></p>
 
         </React.Fragment>
 

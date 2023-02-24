@@ -27,9 +27,9 @@ function App() {
   return (
 
     <React.Fragment>
-
+      
       <RouterProvider router={router}></RouterProvider>
-
+      <h1>Este es el inicio</h1>
     </React.Fragment>
 
 

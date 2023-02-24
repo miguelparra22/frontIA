@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {openNav, closeNav, openDrop} from "../functions/menuFunctions"
+import {closeNav} from "../functions/menuFunctions"
 
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -30,10 +30,10 @@ function MenuLateral() {
                 </button>
                 <div className="dropdown-container">
                     <Link to={"/chatGpt3"}>ChatGpt3</Link>
-                    <Link to={"/Dalle"}>Dalle</Link>
+                    <Link to={"/Dalle"}>Dall-E</Link>
                 </div>
                 <a href="#about">Video</a>
-                <a href="#services">Gramática</a>
+                <a href="#services">Grammar</a>
                 <a href="#clients">NFT</a>
                 <a href="#contact">Blockchain Cert.</a>
                 <a href="#contact">More</a>

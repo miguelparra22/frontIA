@@ -1,6 +1,6 @@
 
 import React from "react"
-import {openNav, closeNav} from "../functions/menuFunctions";
+import {openNav} from "../functions/menuFunctions";
 import logo from "../Assets/logo.png"
 
 function NavBarForm() {
