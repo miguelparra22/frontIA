@@ -8,7 +8,6 @@ function Home(){
         <React.Fragment>
             <NavBarForm />
             <MenuLateral />
-            
         </React.Fragment>
   
     );

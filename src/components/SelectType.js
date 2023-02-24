@@ -1,4 +1,5 @@
 import React from "react";
+import {dataSelectType} from "../functions/manejoDatosSelect"
 
 const Types = [{
     value: 'Description copy'
@@ -21,20 +22,24 @@ const Types = [{
 ]
 
 const valorSelectItem = () => {
-    var valueText = document.getElementById("selectType").value;
+    var valueText = document.getElementById("selectType").state.value ;
     var spanText = document.getElementById('spanType')
-    spanText.innerHTML = valueText
+    dataSelectType(valueText);
+   // spanText.innerHTML = valueText
 }
+
+
+
+
 function SelectType() {
     return (
         <React.Fragment>
-            <label className="pInfo">Tema de interes</label>
-            <select id="selectType" onChange={valorSelectItem} className='selectForm' >
-                {Types.map(valorItem => (
-                    <option value={valorItem.value}>{valorItem.value}</option>
+            
+            {Types.map(valorItem => (
+                    <option key={valorItem.value} value={valorItem.value}>{valorItem.value}</option>
                 ))}
-            </select>
-            <p className="pInfoGreen"><b>Seleccionaste:</b> <span id="spanText"></span></p>
+            
+            <p className="pInfoGreen"><b>you selected:</b> <span id="spanText"></span></p>
 
         </React.Fragment>
     )

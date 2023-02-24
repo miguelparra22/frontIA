@@ -68,7 +68,7 @@ code {
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -79,6 +79,9 @@ code {
   padding-top: 60px;
 }
 
+#main{
+    margin-left: 250px;
+}
 .sidenav a, .dropdown-btn {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -100,6 +103,7 @@ code {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  cursor: pointer;
 }
 
 .dropdown-item{
@@ -123,7 +127,8 @@ code {
 }
 
 .accordion-flush{
-  background-color: red;
+  background-color: var(--gray-clear);
+  color: #ddd;
 }
 
 
@@ -221,6 +226,70 @@ option:hover{
 #response{
   display: none;
 }
+
+.bg-accordeon-dark{
+  background-color: var(--gray-color);
+}
+
+.linkAccordeon{
+  text-decoration: none;
+  color: #7e7d7d;
+}
+
+.linkAccordeon:hover{
+  text-decoration: none;
+  color: #e7e8ea;
+}
+
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent #CDDC39 var(--green-color);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+    
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+    
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

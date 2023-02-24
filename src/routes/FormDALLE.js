@@ -4,6 +4,7 @@ import { NavBarForm } from "../components/NavBar";
 import { Configuration, OpenAIApi } from "openai";
 import { Titulo } from "../components/Titulo";
 import { TextArea } from "../components/TextArea";
+import { ImagesData } from "../components/ImagesData";
 
 const tituloGPT3 = "¿Necesitas Ideas?"
 const textoAccordeonGPT3 = <p>Viajes: Crea una imagen de una habitación de hotel con vista al mar en Hawai durante el atardecer, Dibuja una maleta de viaje elegante y moderna para una escapada de fin de semana, Crea una imagen de un viajero en un aeropuerto con una sonrisa en su rostro y una maleta en la mano.
@@ -19,23 +20,21 @@ const textoAccordeonTipo = () => {
 }
 
 
+
+
 function FormDALLE() {
 
-    //const style = "javascript";
+    const [result, setResults] = useState("");
+    const [prompValue, setPromtValue] = useState("");
+    console.log(prompValue)
 
-    const [style, setStyle] = useState("");
-    const [mood, setMood] = useState("");
-    const [topic, setTopic] = useState("");
-    // const [type, setType] = useState("");
-    const [range, setRange] = useState("");
 
     //const prompt = `Write contend type ${type} type contend , with ${mood} tone about ${topic}, considering the following:${style} and add a title or subject if required.\n##`
 
-    const [textEscrito, setTextoEscrito] = useState("");
     const [cargando, setCargando] = useState(false);
 
     const configuracion = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
     })
 
     const openai = new OpenAIApi(configuracion);
@@ -45,13 +44,13 @@ function FormDALLE() {
 
         openai.createImage({
 
-            prompt: "Say hello",
+            prompt: prompValue,
             n: 5,
             size: "1024x1024"
         }).then((res) => {
             if (res.status === 200) {
                 setCargando(false);
-                console.log(res)
+                setResults(res.data)
             }
         }).catch((err) => {
             console.log(e, "Ocurrio un error")
@@ -72,10 +71,10 @@ function FormDALLE() {
                     </div>
                     <Titulo value="IMAGES'S CREATOR DALL-E" />
                     <div className='row'>
-
                         <div className='col-md-6 mb-3'>
-                            <TextArea onChange={(e) => setStyle(e.target.value)}></TextArea>
+                            <textarea className='form-control txtArea' onChange={(e) => setPromtValue(e.target.value)}></textarea>
                         </div>
+
                         <div className="col-md-6 mb-3">
                             <h3 className="text-white">Select the image format </h3>
                             <div className="row mb-5 mt-3">
@@ -104,6 +103,7 @@ function FormDALLE() {
 
                             </div>
 
+
                             <div className='col-md-12'>
                                 <div className="row botonesContainer">
                                     <div className="col-md-4 col-sm-4  col-xs-12">
@@ -122,20 +122,20 @@ function FormDALLE() {
                             <div className="col-md-12" id="response">
                                 <hr></hr>
                                 <h2 className="text-white">Respuesta:</h2>
-                                </div>
+                            </div>
 
                         </div>
 
+                    </div>
+
+                    <div className="container">
+                        <h2>Deberia verse</h2>
+                        <ImagesData imagesData={result.data}></ImagesData>
                     </div>
                 </div>
             </section>
 
 
-            <h1>Ventana DALLE</h1>
-            <button onClick={HandleSubmit}>hola</button>
-            <div id="mostrar">
-
-            </div>
         </React.Fragment>
     )
 }

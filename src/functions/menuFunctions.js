@@ -1,10 +1,12 @@
-const openNav = () => {
+function openNav() {
     document.getElementById("sideNavId").style.width = "250px";
-}
-
-const closeNav = () => {
-    document.getElementById("sideNavId").style.width = "0px";
-}
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("sideNavId").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
 
 const openDrop = () =>{
    
