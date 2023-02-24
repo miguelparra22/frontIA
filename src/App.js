@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+
+
 import './App.css';
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { FormularioGPT3 } from './routes/FormularioGPT3';
+import { FormDALLE} from './routes/FormDALLE';
+import { Home } from './routes/Home';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home></Home>,
+    errorElement: <h1>Ups error</h1>
+  },
+  {
+    path: 'ChatGpt3',
+    element: <FormularioGPT3 />
+  },
+  {
+    path: 'DALLE',
+    element: <FormDALLE />
+  }
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <React.Fragment>
+
+      <RouterProvider router={router}></RouterProvider>
+
+    </React.Fragment>
+
+
   );
 }
 
