@@ -20,21 +20,6 @@ const textoAccordeonGPT3 = <p>Travel: Create an image of a hotel room with a vie
 
 const containerRespuesta = document.getElementById("response")
 
-const showForm = () => {
-    const containerForm = document.querySelectorAll(".formGpt3")
-    containerForm.forEach(function (element) {
-        element.style.display = "block"
-    })
-    containerRespuesta.style.display = "none";
-}
-const byeForm = () => {
-    const containerForm = document.querySelectorAll(".formGpt3")
-    containerForm.forEach(function (element) {
-        element.style.display = "none"
-    })
-
-}
-
 
 
 function FormDALLE() {
@@ -43,7 +28,6 @@ function FormDALLE() {
     const [prompValue, setPromtValue] = useState("");
     const [format, setFormat] = useState("");
     const [countImages, setCountImages] = useState("");
-    console.log(countImages)
 
 
 
@@ -52,7 +36,7 @@ function FormDALLE() {
     const [cargando, setCargando] = useState(false);
 
     const configuracion = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
     })
 
     const openai = new OpenAIApi(configuracion);
@@ -65,6 +49,7 @@ function FormDALLE() {
             element.style.display = "block"
         })
         containerRespuesta.style.display = "none";
+       document.onload()
     }
     const byeForm = () => {
         const containerForm = document.querySelectorAll(".formGpt3")
@@ -78,7 +63,6 @@ function FormDALLE() {
         setCargando(true)
 
         openai.createImage({
-
             prompt: prompValue,
             n: parseInt(countImages),
             size: format
@@ -145,7 +129,7 @@ function FormDALLE() {
                                 <div className='col-md-12'>
                                     <div className="row botonesContainer">
                                         <div class="d-grid gap-2">
-                                            <button className='btn btnEnviarOutlineDark' onClick={HandleSubmit}>{cargando ? " Cargando, espere por favor" : "Enviar"}</button>
+                                            <button className='btn btnEnviarOutlineDark' onClick={HandleSubmit}>{cargando ? " Loading, please wait ..." : "Enviar"}</button>
                                         </div>
                                     </div>
                                 </div>

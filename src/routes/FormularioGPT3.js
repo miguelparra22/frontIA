@@ -7,7 +7,7 @@ import { NavBarForm } from "../components/NavBar";
 import { SelectTono } from "../components/SelectTono";
 import { Configuration, OpenAIApi } from "openai";
 import { SelectType } from "../components/SelectType";
-import "../index.css"
+
 
 const tituloGPT3 = "Need help?"
 const textoAccordeonGPT3 = <p>Very low temperature (0.1 - 0.3): The model tends to generate more precise and conservative responses, and is less likely to make mistakes or produce absurd answers. However, it is also less likely that the model will generate imaginative or innovative responses.
@@ -34,7 +34,7 @@ function FormularioGPT3() {
 
     const [cargando, setCargando] = useState(false);
     const configuracion = new Configuration({
-        apiKey: "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",
+        apiKey: "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"
     })
 
     const containerRespuesta = document.getElementById("response")
@@ -120,7 +120,7 @@ function FormularioGPT3() {
 
                                     <div className="col-md-12">
                                         <label className="text-white">Control the "Temperature"</label>
-                                        <input type="range" className='inputRange' min="0.0" max="1.0" step=".1" onChange={(e) => setRangeValue(e.target.value)} ></input>
+                                        <input type="range" className='form-range inputRange'  min="0.0"  max="1.0" step=".1" onChange={(e) => setRangeValue(e.target.value)} ></input>
                                         <p className="text-white" id="rangeP">Your range selected: {rangeValue}</p>
                                     </div>
                                 </div>
