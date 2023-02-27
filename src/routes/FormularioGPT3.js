@@ -34,7 +34,7 @@ function FormularioGPT3() {
 
     const [cargando, setCargando] = useState(false);
     const configuracion = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
     })
 
     const containerRespuesta = document.getElementById("response")
