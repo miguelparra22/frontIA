@@ -29,11 +29,6 @@ const valoresItems = [
 
 ;
 
-const valorSelectItem = () => {
-    var valueText = document.getElementById("selectItem").value;
-    var spanText = document.getElementById('spanItem')
-    //spanText.Write = valueText
-}
 
 function SelectItem() {
 

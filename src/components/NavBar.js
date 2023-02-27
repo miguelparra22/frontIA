@@ -1,7 +1,7 @@
 
 import React from "react"
 import {openNav} from "../functions/menuFunctions";
-import logo from "../Assets/logo.png"
+import logo from "../Assets/logoblanco.png"
 
 function NavBarForm() {
     return (
@@ -15,7 +15,7 @@ function NavBarForm() {
           
             <form className="d-flex" role="search">
              
-              <button className="btn" type="button" onClick={openNav}>
+              <button className="btn btn-outline-secondary " type="button" onClick={openNav}>
               <span className="navbar-toggler-icon"></span>
               </button>
             </form>

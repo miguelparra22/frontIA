@@ -1,0 +1,323 @@
+:root {
+    /*--green-color: #BDFF02;*/
+    --green-color: #CDDC39;
+    --black-color: #010101;
+    --gray-color: #27292D;
+    --gray-clear: #4A4B4F;
+    --white-color: #fff;
+  }
+  
+  body {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-size: cover;
+    color: var(--white-color);
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  .containerBlog {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .principalTitle {
+    font-weight: 700;
+    color: white;
+  }
+  
+  .formBlog {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--gray-color);
+    border: 1px solid #3e3d3d;
+  }
+  
+  .inputRange {
+    width: 100%;
+  }
+  
+  .btnEnviar {
+    width: 70%;
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 7px;
+  }
+  
+  .btnRodeado {
+    width: 70%;
+    border: 1px solid white;
+    padding: 7px;
+    color: white;
+    border-radius: 7px;
+    background: none;
+  }
+  
+  .btnRodeado:hover {
+    background-color: var(--green-color);
+    color: #010101;
+  }
+  
+  #textAreaBlog {
+    height: 95%;
+  }
+  
+  
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--gray-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  #main {
+    margin-left: 250px;
+    transition: all 1.5s;
+  }
+  
+  .sidenav a,
+  .dropdown-btn {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--green-color);
+    display: block;
+    transition: 0.3s;
+    background: none;
+    border: none;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item {
+    background-color: #27292D;
+  }
+  
+  .btnEnviar {
+    background-color: var(--green-color);
+  }
+  
+  .labelTitulo {
+    color: #f1f1f1;
+  }
+  
+  .pInfo {
+    color: #f1f1f1;
+  }
+  
+  .pInfoGreen {
+    color: var(--green-color);
+  }
+  
+  .accordion-flush {
+    background-color: var(--gray-clear);
+    color: #ddd;
+  }
+  
+  
+  .textNav {
+    color: var(--green-color);
+    cursor: pointer;
+  }
+  
+  .activeBtn {
+    background-color: var(--green-color);
+    color: var(--black-color);
+  }
+  
+  .bg-dark {
+    background: var(--gray-color);
+  }
+  
+  .selectForm {
+    border: 1px solid var(--gray-clear);
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background: none;
+    color: #CDDC39;
+  }
+  
+  .selectForm,
+  option {
+    background-color: #27292D;
+  }
+  
+  .selectForm,
+  option:hover {
+    background-color: var(--gray-color);
+  }
+  
+  
+  .txtArea {
+    background: none;
+    transition: all 3s;
+    border: 1px solid #ddd;
+    border-bottom: 3px solid var(--green-color);
+    width: 100%;
+    border-radius: 0px;
+    color: #ddd;
+  }
+  
+  .txtArea:focus {
+    border-color: #CDDC39;
+    color: #010101;
+  }
+  
+  .bg-Mygreen {
+    background-color: var(--green-color);
+  }
+  
+  .btnEnviarOutlineWhite {
+    background: none;
+    border: 1px solid white;
+    transition: all 1.5s;
+  }
+  
+  .btnEnviarOutlineWhite:hover {
+    background: white;
+    border: 1px solid white;
+    color: #27292D;
+    font-size: 20px;
+  }
+  
+  .btnEnviarOutlineDark {
+    background: none;
+    border: 1px solid var(--green-color);
+    color: #CDDC39;
+    transition: all 1.5s;
+  }
+  
+  .btnEnviarOutlineDark:hover {
+    background: var(--green-color);
+    border: 1px solid var(--green-color);
+    color: var(--black-color);
+  }
+  
+  .botonesContainer {
+    width: 100%;
+  }
+  
+  .txtAreaResponse {
+    width: 100%;
+    height: 250px;
+    color: #ddd;
+    border: solid 1px var(--gray-clear);
+  }
+  
+  .txtAreaResponse:focus {
+    color: white;
+    border: 1px solid #CDDC39;
+  }
+  
+  
+  #response {
+    display: none;
+  }
+  
+  .bg-accordeon-dark {
+    background-color: var(--gray-color);
+  }
+  
+  .linkAccordeon {
+    text-decoration: none;
+    color: #7e7d7d;
+  }
+  
+  .linkAccordeon:hover {
+    text-decoration: none;
+    color: #e7e8ea;
+  }
+  
+  
+  
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  .loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent #CDDC39 var(--green-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+  
+    .sidenav a {
+      font-size: 18px;
+    }
+  
+  }
+  

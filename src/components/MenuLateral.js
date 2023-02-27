@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { closeNav } from "../functions/menuFunctions"
+import Swal from "sweetalert2";
+import { FormMidJourney } from "../routes/FormMidJourney";
 
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function () {
-    this.classList.toggle("activeBtn");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
+const pageNoExist = () =>{
+  
+  
+  Swal.fire({
+    title: 'Page under construction',
+    icon: 'info',
+    confirmButtonText: 'Ok'
+  })
 }
+
+
 
 function MenuLateral() {
 
@@ -24,7 +22,7 @@ function MenuLateral() {
     <React.Fragment>
       <div id="sideNavId" className="sidenav">
         <a className="closebtn"  onClick={closeNav}>&times;</a>
-        <Link to={"Home"}>Home <i className="fa fa-home"></i></Link>
+        <Link to={"/"}><i className="fa fa-home"></i> Home</Link>
 
         <a data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Text  <i className="fa fa-caret-down m-3"></i></a>
 
@@ -33,18 +31,31 @@ function MenuLateral() {
             <div className="collapse multi-collapse" id="multiCollapseExample1">
               <div className="card card-body bg-dark">
                 <Link to={"/chatGpt3"}>Gpt3</Link>
-                <Link to={"/Dalle"}>Dall-E</Link>              
+                <Link to={"/"}  onClick={pageNoExist}>Bard</Link>              
               </div>
             </div>
           </div>
         </div>
        
-        <a href="#about">Video</a>
-        <a href="#services">Grammar</a>
-        <a href="#clients">NFT</a>
-        <a href="#contact">Blockchain Cert.</a>
-        <a href="#contact">More</a>
-        <a href="#contact">Logout</a>
+        <a data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Image  <i className="fa fa-caret-down m-3"></i></a>
+
+        <div className="row">
+          <div className="col">
+            <div className="collapse multi-collapse" id="multiCollapseExample2">
+              <div className="card card-body bg-dark">
+                <Link to={"/Dalle"}>Dall-E</Link> 
+                <Link to={"/MidJourney"}>Mid-Journey</Link>             
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" onClick={pageNoExist}>Video</a>
+        <a href="#services"  onClick={pageNoExist}>Grammar</a>
+        <a href="#clients"  onClick={pageNoExist}>NFT</a>
+        <a href="#contact"  onClick={pageNoExist}>Blockchain Cert.</a>
+        
+        {/** <a href="#contact">More</a><a href="#contact">Logout</a>*/}
       </div>
 
     </React.Fragment>

@@ -14,7 +14,7 @@ function Accordeon(props) {
                 <div className="card card-body bg-dark text-white">
                 {props.textoAccordeon}
                 <button className="btn btn-outline-secondary " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Cerrar
+                    Close
                 </button>
                 </div>
             </div>

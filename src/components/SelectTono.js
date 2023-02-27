@@ -21,11 +21,6 @@ const valoresItems = [
 
 ;
 
-const valorSelectItem = () => {
-    var valueText = document.getElementById("selectTono").value;
-    var spanText = document.getElementById('spanTono')
-  //  spanText.innerHTML = valueText
-}
 
 function SelectTono() {
 

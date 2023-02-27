@@ -5,10 +5,9 @@ import { SelectItem } from "../components/SelectItem";
 import { MenuLateral } from "../components/MenuLateral";
 import { NavBarForm } from "../components/NavBar";
 import { SelectTono } from "../components/SelectTono";
-import { TextArea } from "../components/TextArea";
 import { Configuration, OpenAIApi } from "openai";
 import { SelectType } from "../components/SelectType";
-import { dataSelectType, dataSelectTypeValue } from "../functions/manejoDatosSelect"
+import "../index.css"
 
 const tituloGPT3 = "Need help?"
 const textoAccordeonGPT3 = <p>Very low temperature (0.1 - 0.3): The model tends to generate more precise and conservative responses, and is less likely to make mistakes or produce absurd answers. However, it is also less likely that the model will generate imaginative or innovative responses.
@@ -26,8 +25,8 @@ function FormularioGPT3() {
     const [topic, setTopic] = useState("");
     const [type, setType] = useState("");
     const [rangeValue, setRangeValue] = useState("");
-
     const [textEscrito, setTextoEscrito] = useState("");
+    
 
     const prompt = `Write contend type ${type} type contend , with ${mood} tone about ${topic}, considering the following:${style} and add a title or subject if required.\n##`
     //const prompt = `Write a blog post and its title, with a ${mood} tone, on the topic of ${topic}. Consider the following themes: ${style}.\n##`
@@ -35,10 +34,25 @@ function FormularioGPT3() {
 
     const [cargando, setCargando] = useState(false);
     const configuracion = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
     })
 
     const containerRespuesta = document.getElementById("response")
+
+    const showForm = () => {
+        const containerForm = document.querySelectorAll(".formGpt3")
+        containerForm.forEach(function(element){
+            element.style.display = "block"
+        })
+        containerRespuesta.style.display = "none";
+    }
+    const byeForm = () => {
+        const containerForm = document.querySelectorAll(".formGpt3")
+        containerForm.forEach(function(element){
+            element.style.display = "none"
+        })
+        
+    }
 
 
     const openai = new OpenAIApi(configuracion);
@@ -52,23 +66,20 @@ function FormularioGPT3() {
             max_tokens: 100,
         }).then((res) => {
             if (res.status === 200) {
-
+                
                 setCargando(false);
+                byeForm()
                 setTextoEscrito(res?.data?.choices[0]?.text)
-
+                
                 containerRespuesta.style.display = "block"
 
             }
         }).catch((err) => {
+
             console.log(e, "Ocurrio un error")
         })
     }
 
-     const refreshWindow = () =>{
-        this.props.history.push(this.props.match.url)
-    window.location.reload(true);
-     }
-    
 
 
     return (
@@ -81,12 +92,9 @@ function FormularioGPT3() {
 
                 <section className='containerBlog'>
                     <div className='formBlog'>
-                        <div className="IconsAndTitle">
-
-                        </div>
-                        <Titulo value="BLOG'S REDACTOR" />
+                        <Titulo value="TEXT GENERATOR GPT3" />
                         <div className='row'>
-                            <div className='col-md-6'>
+                            <div className='col-md-6 formGpt3'>
                                 <div className="row">
                                     <div className="col-md-12">
                                         <label className="pInfo">Type</label>
@@ -118,17 +126,15 @@ function FormularioGPT3() {
                                 </div>
                             </div>
 
-                            <div className='col-md-6 mb-3'>
+                            <div className='col-md-6 mb-3 formGpt3'>
                                 <span className="labelTitulo">Write about:</span>
                                 <textarea onChange={(e) => setStyle(e.target.value)} id="textAreaBlog" className='form-control txtArea' placeholder='Separate your ideas, with a " , "'></textarea>
                             </div>
 
-                            <div className='col-md-12 mt-3'>
+                            <div className='col-md-12 mt-3 formGpt3'>
                                 <hr />
                                 <div className="row botonesContainer">
-                                    <div className="col-md-4 col-sm-4  col-xs-12">
-                                        <button className="btnEnviar btnEnviarOutlineWhite" id="reload" onClick={refreshWindow}>New</button>
-                                    </div>
+
                                     <div className="col-md-4 col-sm-4  col-xs-12">
                                         <button className='btnEnviar btnEnviarOutlineDark' onClick={HandleSubmit}>{cargando ? " Loading, please wait ..." : "Send"}</button>
                                     </div>
@@ -147,20 +153,16 @@ function FormularioGPT3() {
                                 <div className="row">
 
                                     <div className="col-md-12">
-                                        <div className="spinnerContainer  mt-5 text-center" id="containerLoader">
-                                            <span className={cargando ? "loader" : "Send"}></span>
-                                        </div>
-                                    </div>
-
-
-                                    <div className="col-md-12">
                                         <hr></hr>
 
 
                                         <h2 className="text-white">Answer: </h2>
-                                        <textarea className='txtAreaResponse bg-dark' value={textEscrito} onChange={(e) => setTextoEscrito(e.target.value)}>
+                                        <textarea className='txtAreaResponse  txtArea' value={textEscrito} onChange={(e) => setTextoEscrito(e.target.value)}>
 
                                         </textarea>
+                                        <div className="col-md-6 col-sm-6  col-xs-12 mt-3">
+                                            <button className="btnEnviar btnEnviarOutlineWhite" id="reload" onClick={showForm}>Generate new text <span className="fa fa-plus"></span></button>
+                                        </div>
 
                                     </div>
                                 </div>

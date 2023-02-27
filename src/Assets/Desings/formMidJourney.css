@@ -1,0 +1,139 @@
+:root {
+    --principal-color: #4A4B4F;
+    --secondary-color: #007ca0;
+    --tertiary-color: #CDDC39;
+}
+
+/*
+:root {
+    
+    --green-color: #CDDC39;
+    --black-color: #010101;
+    --gray-color: #27292D;
+    --gray-clear: #4A4B4F;
+    --white-color: #fff;
+  }*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../wallpaper2.jpg) no-repeat;
+    background-size: cover;
+    color: #ddd;
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.containerForm {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.formMidJourney {
+    width: 80%;
+    -webkit-box-shadow: 10px 7px 23px 14px rgba(255, 0, 0, 0.37);
+    -moz-box-shadow: 10px 7px 23px 14px rgba(212, 28, 28, 0.37);
+    box-shadow: 10px 7px 23px 14px rgba(252, 252, 252, 0.37);
+    padding: 20px;
+}
+
+.formMidJourney select {
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid var(--tertiary-color);
+    color: var(--tertiary-color);
+    width: 100%;
+    padding: 10px;
+}
+
+.formMidJourney select option {
+    background-color: #27292D;
+}
+
+.formMidJourney,
+select option:hover {
+    background-color: var(--gray-color);
+}
+
+.formMidJourney textarea {
+    border-radius: 0px;
+    background: none;
+    color: #ddd;
+    border: 1px solid var(--principal-color);
+    border-bottom: 2px solid var(--tertiary-color);
+    color: #CDDC39;
+    width: 100%;
+    height: 130px;
+    padding: 5px;
+}
+
+.formMidJourney textarea:focus {
+    border-color: #CDDC39;
+    color: #ffffff;
+}
+
+
+
+.formMidJourney .buttonEnviar {
+    background-color: var(--tertiary-color);
+    transition: all .5s;
+}
+
+.formMidJourney .buttonEnviar:hover {
+    background: none;
+    border: 2px solid var(--tertiary-color);
+    font-weight: 600;
+    color: var(--tertiary-color);
+}
+
+.buttonMenu {
+    color: white;
+    font-size: 30px;
+}
+
+.buttonMenu:hover {
+    color: var(--tertiary-color);
+}
+
+.navBarShadow {
+    box-shadow: 0 4px 30px rgba(181, 240, 109, 0.567);
+}
+
+
+.imageContainer {
+    height: 400px;
+}
+
+.card-response {
+    background: var(--gray-color);
+    border: none;
+    cursor: pointer;
+    /* From https://css.glass */
+    /* From https://css.glass */
+    background: rgba(243, 243, 243, 0.64);
+
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(205, 205, 205, 0.679);
+}
+
+.card-response:hover {
+    box-shadow: 0 4px 30px rgba(181, 240, 109, 0.567);
+}
+
+/*
+@media screen and (min-width: 640px) and (max-width: 1880px) {
+   
+  }
+  
+*/
+  @media screen and (min-width: 1880px) {
+    .containerForm {
+      height: 100vh;
+    }
+  }
