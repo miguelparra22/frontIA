@@ -48,7 +48,7 @@ function ImagesData({ imagesData=[]  }) {
                     <div key={index} className="col" style={{ minWidth: "100px", maxWidth: "300px" }}>
                         <div className="card card-response">
 
-                            <img  src={item.url} alt="#"></img>a
+                            <img  src={item.url} alt="#"></img>
 
 
                             <div className="card-body">

@@ -36,7 +36,7 @@ function FormDALLE() {
     const [cargando, setCargando] = useState(false);
 
     const configuracion = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
     })
 
     const openai = new OpenAIApi(configuracion);
@@ -120,7 +120,7 @@ function FormDALLE() {
 
                             <div className='col-md-12 mb-3 formGpt3'>
                                 <h3>Write your idea</h3>
-                                <textarea className='form-control txtArea' style={{ height: "250px" }} onChange={(e) => setPromtValue(e.target.value)}></textarea>
+                                <textarea className='txtArea' style={{ height: "250px" }} onChange={(e) => setPromtValue(e.target.value)}></textarea>
                             </div>
 
 

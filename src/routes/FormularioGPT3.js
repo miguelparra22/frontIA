@@ -7,6 +7,7 @@ import { NavBarForm } from "../components/NavBar";
 import { SelectTono } from "../components/SelectTono";
 import { Configuration, OpenAIApi } from "openai";
 import { SelectType } from "../components/SelectType";
+import "../index.css"
 
 
 const tituloGPT3 = "Need help?"
@@ -34,7 +35,7 @@ function FormularioGPT3() {
 
     const [cargando, setCargando] = useState(false);
     const configuracion = new Configuration({
-        apiKey: "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"
+        apiKey: "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"
     })
 
     const containerRespuesta = document.getElementById("response")
@@ -63,7 +64,7 @@ function FormularioGPT3() {
             model: "text-davinci-003",
             prompt: prompt,
             temperature: parseInt(rangeValue),
-            max_tokens: 100,
+            max_tokens: 200,
         }).then((res) => {
             if (res.status === 200) {
                 
@@ -128,7 +129,7 @@ function FormularioGPT3() {
 
                             <div className='col-md-6 mb-3 formGpt3'>
                                 <span className="labelTitulo">Write about:</span>
-                                <textarea onChange={(e) => setStyle(e.target.value)} id="textAreaBlog" className='form-control txtArea' placeholder='Separate your ideas, with a " , "'></textarea>
+                                <textarea onChange={(e) => setStyle(e.target.value)} id="textAreaBlog" className='txtArea' placeholder='Separate your ideas, with a " , "'></textarea>
                             </div>
 
                             <div className='col-md-12 mt-3 formGpt3'>

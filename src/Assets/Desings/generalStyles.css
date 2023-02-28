@@ -14,8 +14,8 @@
     font-family: 'Source Sans Pro', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-size: cover;
     color: var(--white-color);
+    background: var(--gray-clear);
   }
   
   code {
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     margin-top: 4%;
-    background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: rgba(0, 0, 0, 0.5);*/
   }
   
   .principalTitle {

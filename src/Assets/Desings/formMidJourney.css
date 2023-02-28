@@ -21,24 +21,26 @@
 }
 
 body {
-    background: url(../wallpaper3.jpg) no-repeat;
-    background-size: cover;
+   /* background: url(../wallpaper3.jpg) no-repeat;*/
+   /* background-size: cover;*/
     color: #ddd;
     font-family: 'Source Sans Pro', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #27292D;
 }
 
 .containerForm {
-    background: rgba(0, 0, 0, 0.5);
+   /* background: rgba(0, 0, 0, 0.5);*/
 }
 
 .formMidJourney {
     width: 80%;
-    -webkit-box-shadow: 10px 7px 23px 14px rgba(255, 0, 0, 0.37);
+   /* -webkit-box-shadow: 10px 7px 23px 14px rgba(255, 0, 0, 0.37);
     -moz-box-shadow: 10px 7px 23px 14px rgba(212, 28, 28, 0.37);
-    box-shadow: 10px 7px 23px 14px rgba(252, 252, 252, 0.37);
+    box-shadow: 10px 7px 23px 14px rgba(252, 252, 252, 0.37);*/
     padding: 20px;
+    border: 1px solid #4A4B4F;
 }
 
 .formMidJourney select {
@@ -101,7 +103,8 @@ select option:hover {
 }
 
 .navBarShadow {
-    box-shadow: 0 4px 30px rgba(181, 240, 109, 0.567);
+    background-color: var(--tertiary-color) ;
+    /*box-shadow: 0 4px 30px rgba(181, 240, 109, 0.567);*/
 }
 
 

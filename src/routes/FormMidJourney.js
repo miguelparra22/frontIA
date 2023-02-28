@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { NavBar2 } from "../components/NavBar2";
-import imageExample from "../Assets/wallpaper.jpg"
 import { MenuLateral } from "../components/MenuLateral";
 import "../Assets/Desings/navBarDesing.css"
 import "../Assets/Desings/formMidJourney.css"
-import { predict } from "replicate-api";
 import { ImagesDataReplicate } from "../components/imagesDataReplicate"
 
 
 
 function FormMidJourney() {
     const [result, setResults] = useState("");
-    console.log(result)
     const [resultResponse, setResultResponse] = useState("");
     const [cargando, setCargando] = useState(false);
     const [textoEscrito, setTextoEscrito] = useState('');
+    const [numberOutputs, setNumberOutputs] = useState('');
 
 
     const REPLICATE_API_URL = 'https://api.replicate.com/v1/predictions';
@@ -33,7 +31,9 @@ function FormMidJourney() {
 
         body: JSON.stringify({
             "version": "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
-            "input": { "prompt": promptUser }
+            "input": { "prompt": promptUser,
+            "num_outputs": numberOutputs}
+            
         }),
 
     };
@@ -55,7 +55,7 @@ function FormMidJourney() {
         const data = await response.json();
 
         // Espera 5 segundos antes de continuar
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve , 20000));
 
         const response2 = await fetch(PROXY_SERVER_URL +  data.urls.get, requestOptions2);
         const data2 = await response2.json();
@@ -66,7 +66,7 @@ function FormMidJourney() {
     function api() {
         fetchData()
             .then(data => {
-                console.log(data)
+                console.log(data.status)
                 setResults(data.output)
                 if(data.output != null){
                     setCargando(false)
@@ -198,32 +198,23 @@ function FormMidJourney() {
                         </div>
                         
                         {/** Form */} <div id="response"></div>
-                        <div className="col-md-6">
+                        <div className="col-md-12">
                             <div className="row">
-                                <div className="col-md-12 p-3">
-                                    <label>Chose format image</label>
-                                    <select>
-                                        <option value="" disabled="true" selected>Select an option</option>
-                                        <option>1024x1024</option>
-                                        <option>512x512</option>
-                                        <option>256x256</option>
-                                    </select>
-                                </div>
-                                <div className="col-md-12 p-3">
-                                    <label>Chose format image</label>
-                                    <select className="selectForm">
+                                
+                                <div className="col-md-6 p-3 m-auto">
+                                    <label>Chose number of images </label>
+                                    <select className="selectForm" onChange={(e) => setNumberOutputs(e.target.value)}>
                                         <option value="" disabled="true" selected>Select an option</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
-                                        <option>5</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-md-6 mt-4">
+                        <div className="col-md-12 mt-4">
                             <h5>Write your idea</h5>
                             <textarea placeholder="Enter your idea." onChange={(e) => setTextoEscrito(e.target.value)}></textarea>
                         </div>
@@ -234,7 +225,7 @@ function FormMidJourney() {
                         </div>
                         {/** Response */}
                         <div className="container m-auto">
-                            <h2>Your response is.</h2>
+                            
                             <ImagesDataReplicate imagesData={resultResponse}></ImagesDataReplicate>
                             
 

@@ -16,8 +16,8 @@ function ImagesDataReplicate({ imagesData = [] }) {
         <div className="row">
             {
                 Array.from(imagesData).map((item, index) => (
-                    <div key={index} className="col" style={{ minWidth: "100px", maxWidth: "500px" }}>
-                        <div className="card card-response">
+                    <div key={index} className="col" style={{ minWidth: "200px", maxWidth: "300px" }}>
+                        <div className="card card-response mt-3">
 
                             <img src={item} alt="#"></img>
 

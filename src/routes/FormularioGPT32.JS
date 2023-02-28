@@ -9,6 +9,8 @@ import { TextArea } from "../components/TextArea";
 import { Configuration, OpenAIApi } from "openai";
 import { SelectType } from "../components/SelectType";
 import { dataSelectType, dataSelectTypeValue } from "../functions/manejoDatosSelect"
+import "../index.css";
+
 
 const tituloGPT3 = "Need help?"
 const textoAccordeonGPT3 = <p>Very low temperature (0.1 - 0.3): The model tends to generate more precise and conservative responses, and is less likely to make mistakes or produce absurd answers. However, it is also less likely that the model will generate imaginative or innovative responses.
